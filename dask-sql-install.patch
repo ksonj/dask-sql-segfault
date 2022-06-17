@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index be50794..2756e54 100755
+--- a/setup.py
++++ b/setup.py
+@@ -19,7 +19,7 @@ def install_java_libraries(dir):
+         raise OSError(
+             "Can not find the mvn (maven) binary. Make sure to install maven before building the jar."
+         )
+-    command = [maven_command, "clean", "install", "-f", "pom.xml"]
++    command = [maven_command, "clean", "package", "-f", "pom.xml"]
+     subprocess.check_call(command, cwd=os.path.join(dir, "planner"))
+ 
+     # copy generated jar to python package
